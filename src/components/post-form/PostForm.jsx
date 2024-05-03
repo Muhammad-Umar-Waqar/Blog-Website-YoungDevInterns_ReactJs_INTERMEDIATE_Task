@@ -23,7 +23,8 @@ function PostForm({post}) {
     const userData =  useSelector(state => state.auth.userData )
     
     const submit = async (data) => {
-        console.log("userData at start of PostForm", userData)
+        
+
         try {
             if (post) {
                 const file = data.image && data.image[0] ? await appwriteService.uploadFile(data.image[0]) : null;
@@ -43,8 +44,7 @@ function PostForm({post}) {
                 if (file) {
                     const fileId =  file.$id;
                     data.featuredImage =  fileId; // Assign the fileId directly, no need for await here
-                    // console.log("Data object before calling createPost:", data);
-                    console.log("UserData object before calling createPost:", userData);
+                  
 
                     const dbPost = await appwriteService.createPost({ ...data, userId: userData?.$id });
     

@@ -1,6 +1,7 @@
 import { Client, ID, Databases, Storage, Query } from "appwrite";
 import conf from "../conf/conf";
-console.log("Only ID ", ID );
+
+
 
 
 export class Service{

@@ -14,8 +14,6 @@ export default function Post() {
 
     const isAuthor = post && userData ? post.userId === userData.$id : false;
 
-    console.log("userData from INSIDE Post.jsx authSlice", userData);
-
     
     useEffect(() => {
         if (slug) {
