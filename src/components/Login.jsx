@@ -19,7 +19,7 @@ function Login() {
             const session = await authService.login(data) // Now if this session is present then it's mean user is logged in 
             if(session){                                  // and session is not present then user isn't logged in.
                 const userData = await authService.getcurrentUser()
-                if (userData) dispatch(authLogin(userData)) // If this condition is sucessfull then its mean user logged in 
+                if (userData) dispatch(authLogin({userData})) // If this condition is sucessfull then its mean user logged in 
                 navigate('/')                              // Succcessfully so we navigate user to Home automatically 
                 console.log("userData from: LOGIN", userData)
             }                                            // If we use Link then it don't navigate automatically

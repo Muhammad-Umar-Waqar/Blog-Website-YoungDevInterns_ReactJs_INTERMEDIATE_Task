@@ -14,14 +14,14 @@ function PostForm({post}) {
             title:post?.title || "",
             slug : post?.$id || "",
             content : post?.content || "",
-            status : post?.status || "active",
+           status : post?.status || "active",
         }
     
     })
     
     const navigate = useNavigate()
     const userData =  useSelector(state => state.auth.userData )
-    
+    console.log("userData from Post Form", userData );
     const submit = async (data) => {
         
 
